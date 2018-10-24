@@ -29,7 +29,7 @@
         var qtdN = 5; // Quantidade máxima que a máquina vai sortear
         var nPlayers = ''; // Valor digitado no campo input 
         var nPC = ''; // Número sorteado pela máquina
-
+        var total = '';
         var mySelect = 'par';
 
         function sortear(qtdN) {
@@ -40,8 +40,25 @@
             nPC = sortear(qtdN) // Recebe p número sorteado pela máquina
             nPlayers = parseInt(document.querySelector('.myNumber').value); // Pega o valor do input e add na variavel nPlayers
 
+            total = parseInt(nPlayers + nPC);
+
+            // Operador Condicional Ternário (atalho para a instrução if).
+            var resultado = (total % 2 === 0) ? 'Número Par' : 'Número Ímpar';
+
+            // Chamada da função verificar resultado
+            verificarResultado(resultado);
+
             console.log('nPC ', nPC); // Exibir número sorteado pela máquina 
             console.log('nPlayers ', nPlayers, typeof nPlayers); // Exibir número escolhido pelo jogador e exibir o tipo da variavel nPlayers
+        }
+
+        // função para verificar resultado
+        function verificarResultado(resultado) {
+            if (mySelect === resultado) {
+                alert('Eu Ganhei !');
+            } else {
+                alert('O Computador Ganhou !');
+            }
         }
     </script>
 </body>
