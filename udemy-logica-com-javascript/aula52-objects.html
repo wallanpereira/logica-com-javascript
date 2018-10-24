@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <style>
+        .content {
+            padding-top: 20px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .textNumero {
+            color: darkmagenta;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">Testes com JS (Objetos)</h3>
+
+            <p class="text">
+                Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla laboris cupidatat ut amet irure
+                cillum.
+                Anim
+                cillum aliqua in irure. Minim mollit occaecat anim fugiat reprehenderit veniam ad et labore. Do
+                reprehenderit
+                voluptate nulla elit consectetur do occaecat aute. Minim ut do voluptate amet. Elit ea duis labore
+                aliqua
+                veniam occaecat aliquip fugiat amet dolor cillum et. Nostrud aliquip tempor consequat irure laboris
+                duis eu
+                aliqua ad.
+                Adipisicing minim occaecat exercitation exercitation sint tempor labore minim anim ad cillum cupidatat.
+                Irure
+                ut elit et aliqua eu nisi exercitation. Sint commodo tempor exercitation quis dolor aute culpa non elit
+                commodo
+                sint Lorem est.
+            </p>
+
+            <div class="output"></div>
+
+            <!-- <button type="button" class="btn btn-success" onclick="mostrarAlert()">Em alert</button>
+            <button type="button" class="btn btn-primary" onclick="mostrarOutput()">Em uma #div</button>
+            <button type="button" class="btn btn-warning" onclick="reset()">Calcular novamente</button> -->
+        </div>
+    </div>
+    <script>
+        var x = "Teste ";
+        /* Dados pessoa com javascript 
+        var obj = new Object();
+        obj.nome = "Wallan";
+        obj.sobrenome = "Pereira";
+        obj.idade = 24
+
+        var pessoa = '';
+        pessoa += 'Nome: ' + obj.nome + '<br/>';
+        pessoa += 'Sobrenome: ' + obj.sobrenome + '<br />';
+        pessoa += 'Idade: ' + obj.idade + '<br />';
+        document.querySelector('.output').innerHTML = pessoa + endereco();
+        //Escrever no HTML passando o var pessoa e a função endereco.
+
+        function endereco() {
+            obj.cidade = "São Paulo";
+            obj.estado = "SP";
+            obj.cep = "05333-050";
+            var end = '';
+                end += 'Cidade: ' + obj.cidade + '<br />';
+                end += 'Estado: ' + obj.estado + '<br />';
+                end += 'CEP: ' + obj.cep + '<br />';
+
+            return end;
+        }
+        */
+       var obj = new Object();
+       obj.nome = "Roy Skywalker";
+       obj.psn = ['namikaze7x',' roy_skywalker'];
+       obj.games = ['Watch Dogs 2',' Star Wars',' Horizon',' Fifa 18'];
+       obj.idade = 24;
+
+       var jogador = '';
+       jogador += '<strong>Nome:</strong> ' + obj.nome + '<br/>';
+       jogador += '<strong>Nickname:</strong> ' + obj.psn + '<br/>';
+       jogador += '<strong>Games:</strong> ' + obj.games + '<br/>';
+       jogador += '<strong>Idade:</strong> ' + obj.idade + '<br/>';
+       document.querySelector('.output').innerHTML = jogador + dadosCompleto();
+
+       function dadosCompleto(){
+           obj.cidade = "São Paulo";
+           obj.estado = "SP";
+           obj.cep = "05333-050";
+           var dados = '';
+               dados += '<strong>Cidade:</strong> ' + obj.cidade + '<br/>';
+               dados += '<strong>Estado:</strong> ' + obj.estado + '<br/>';
+               dados += '<strong>CEP:</strong> ' + obj.cep + '<br/>';
+
+        return dados;
+       }
+
+
+        
+    </script>
+</body>
+
+</html>

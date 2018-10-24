@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo JS</title>
+
+    <style>
+        body {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .textNumero {
+            color: darkmagenta;
+        }
+    </style>
+
+</head>
+
+<body>
+    <h4 class="title">Testes com JS</h4>
+
+    <p class="text">
+        Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla laboris cupidatat ut amet irure cillum. Anim
+        cillum aliqua in irure. Minim mollit occaecat anim fugiat reprehenderit veniam ad et labore. Do reprehenderit
+        voluptate nulla elit consectetur do occaecat aute. Minim ut do voluptate amet. Elit ea duis labore aliqua
+        veniam occaecat aliquip fugiat amet dolor cillum et. Nostrud aliquip tempor consequat irure laboris duis eu
+        aliqua ad.
+        Adipisicing minim occaecat exercitation exercitation sint tempor labore minim anim ad cillum cupidatat. Irure
+        ut elit et aliqua eu nisi exercitation. Sint commodo tempor exercitation quis dolor aute culpa non elit commodo
+        sint Lorem est.
+    </p>
+
+    <div id="one">LOREM IPSUM</div>
+
+    <button onclick="criarTabuada()">Cria Tabuada</button>
+    <button onclick="limpaTabuada()">Limpar Tabuada</button>
+
+    <!-- contador 
+    <script>
+        var numero = parseFloat(prompt('Digite um número: '));
+        var i = 0;
+
+        while(i <= 39){
+            document.writeln('Número: ' + numero + '<br/>');
+            numero = numero + 1;
+            i = i + 1;
+
+            if (i % 10 === 0 && i > 0){
+                document.write('<hr/>');
+            }
+        }
+        document.write("Saiu do Loop!");
+           
+    </script>
+    -->
+    <!-- Ano em 4 e 4 anos
+    <script>
+        var year = 1004;
+        var i = 0; 
+        
+        while(year <= 2017){
+            document.write(year + '<br/>');
+            //year = year + 4;
+            year += 4;
+        }
+    </script>
+     -->
+    <!-- Year Leap
+    <script>
+        var year = 1000;
+        var i = 0;
+
+        while (year <= 2020) {
+
+            if (!(year % 100 === 0) || (year % 400 === 0)) {
+                document.write('This is leap: ' + year + '<br/>');
+            } else {
+                document.write('<br />' + year + ' Not is leap' + '<br /><br />');
+            }
+            year += 4;
+        }
+    </script>
+    -->
+    <!-- Aula 30 - sequencia de números usando for
+    <script>
+        var one = document.querySelector('#one');
+
+        var mensagem = '';
+        for (var i = 0; i < 10; i++) {
+            mensagem += 'Indice: ' + i + '<br/>';
+        }
+        one.innerHTML = mensagem;
+        //take.innerHTML = '<Strong> Texto inserido por JavaScript </Strong>';
+    </script>
+     -->
+    <!-- Criando metodos 
+    <script>
+        function criarTabuada() {
+            alert('Funcionou a chamada!!!');
+        }   
+        criarTabuada();
+    </script>
+    -->
+    <!-- Tabuada  -->
+    <script>
+        function criarTabuada() {
+
+            var one = document.querySelector('#one');
+            var msg = '';
+
+            // var x = parseInt(prompt('Digite um número: '));
+            // limpaTabuada();
+            // for (var i = 0; i <= 10; i++) {
+            //     var msg = null;
+            //     var res = x * i;
+            //     msg = (x + ' x ' + i + ' = ' + res + '<br/>');
+            // }
+
+            // while (i <= 10) {
+            //     var res = x * i;
+            //     msg = (x + ' x ' + i + ' = ' + res + '<br/>');
+            //     i++;
+            // }
+
+            for (var i = 0; i <= 10; i++) {
+                document.write('Tabuada do número: ' + i + '<br/>');
+                for (var j = 0; j <= 10; j++) {
+                    var res = (i * j);
+                    msg = document.write(i + ' x ' + i + ' = ' + res + '<br/>');
+                }
+            }
+
+            one.innerHTML = msg;
+            //alert('OK!');
+        }
+
+        function limpaTabuada() {
+            msg = '';
+            one.innerHTML = msg;
+        }
+
+        criarTabuada();
+    </script>
+</body>
+
+</html>

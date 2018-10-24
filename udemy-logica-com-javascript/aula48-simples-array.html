@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <style>
+        .content {
+            padding-top: 20px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .textNumero {
+            color: darkmagenta;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">Testes com JS</h3>
+
+            <p class="text">
+                Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla laboris cupidatat ut amet irure
+                cillum.
+                Anim
+                cillum aliqua in irure. Minim mollit occaecat anim fugiat reprehenderit veniam ad et labore. Do
+                reprehenderit
+                voluptate nulla elit consectetur do occaecat aute. Minim ut do voluptate amet. Elit ea duis labore
+                aliqua
+                veniam occaecat aliquip fugiat amet dolor cillum et. Nostrud aliquip tempor consequat irure laboris
+                duis eu
+                aliqua ad.
+                Adipisicing minim occaecat exercitation exercitation sint tempor labore minim anim ad cillum cupidatat.
+                Irure
+                ut elit et aliqua eu nisi exercitation. Sint commodo tempor exercitation quis dolor aute culpa non elit
+                commodo
+                sint Lorem est.
+            </p>
+
+            <div class="output"></div>
+
+            <!-- <button type="button" class="btn btn-success" onclick="mostrarAlert()">Em alert</button>
+            <button type="button" class="btn btn-primary" onclick="mostrarOutput()">Em uma #div</button>
+            <button type="button" class="btn btn-warning" onclick="reset()">Calcular novamente</button> -->
+        </div>
+    </div>
+    <script>
+        /* Percorrer e mostrar o dia da semana 
+        var dia = new Array('Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab');
+        var hoje = new Date();
+        var diaSemama = hoje.getDay(); // Retorna o dia da semana
+        
+        //0 - Domingo
+        //1 - Segunda
+        //...
+        //6 - Sábado
+        
+        //alert('Hoje é ' + dia[diaSemama]); //mostra o dia da semana atual!
+        for (var i = 0; i <= 6; i++) {
+            alert('Bem Vindo, Hoje é ' + dia[i]);
+        } // Vai percorrer todo array
+        */
+
+        /* Soma números pares quando percorrer o Array */
+        var numeros = new Array(37, 20, 15, 10, 8, 7, 90, 30, 7);
+        var x = 0;
+        var soma = calcularPares(numeros);
+
+        function calcularPares(arr) {
+            var sum = 0;
+            while (x < arr.length) {
+                console.log('Indice: ' +
+                    x + ' Fica ' + arr[x]);
+
+                if (!Number.isNaN(arr[x]) && arr[x] % 2 == 0) {
+                    sum = sum + arr[x];
+                }
+
+                x++;
+            }
+            //console.log('A soma de todos números pares é: ' + sum);
+            return sum;
+        }
+        console.log('Soma dos pares é: ' + soma);
+        alert('Soma dos pares é: ' + soma);
+
+        var msg = document.querySelector('.title').textContent;
+        alert(msg);
+        
+    </script>
+</body>
+
+</html>

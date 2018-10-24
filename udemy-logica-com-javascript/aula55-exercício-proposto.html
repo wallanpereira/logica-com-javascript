@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <style>
+        .content {
+            padding-top: 20px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .textNumero {
+            color: darkmagenta;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">Testes com JS (Objetos)</h3>
+
+            <p class="text">
+                Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla laboris cupidatat ut amet irure
+                cillum.
+                Anim
+                cillum aliqua in irure. Minim mollit occaecat anim fugiat reprehenderit veniam ad et labore. Do
+                reprehenderit
+                voluptate nulla elit consectetur do occaecat aute. Minim ut do voluptate amet. Elit ea duis labore
+                aliqua
+                veniam occaecat aliquip fugiat amet dolor cillum et. Nostrud aliquip tempor consequat irure laboris
+                duis eu
+                aliqua ad.
+                Adipisicing minim occaecat exercitation exercitation sint tempor labore minim anim ad cillum cupidatat.
+                Irure
+                ut elit et aliqua eu nisi exercitation. Sint commodo tempor exercitation quis dolor aute culpa non elit
+                commodo
+                sint Lorem est.
+            </p>
+
+            <div class="output"></div>
+
+            <!-- <button type="button" class="btn btn-success" onclick="mostrarAlert()">Em alert</button>
+            <button type="button" class="btn btn-primary" onclick="mostrarOutput()">Em uma #div</button>
+            <button type="button" class="btn btn-warning" onclick="reset()">Calcular novamente</button> -->
+        </div>
+    </div>
+    <script>
+        var um = new Object();
+        um.nome = 'Wallan Pereira';
+        um.email = 'wallan.santos@mjv.com.br';
+
+        var dois = new Object();
+        dois.nome = 'Han Solo';
+        dois.email = 'han.solo@starwars.com';
+
+        var tres = new Object();
+        tres.nome = 'Roy Skywalker';
+        tres.email = 'roy.skywalker@starwars.com';
+
+        var people = new Array(um, dois, tres);
+        
+        console.log(people);
+        
+        var msg = '';
+        var x = 0;
+        while(people[x]){
+            console.log(people[x].nome);
+            console.log(people[x].email);
+            msg += people[x].nome + ' <br/> ' + people[x].email + '<br/>';
+            x++;
+        }
+        
+        document.querySelector('.output').innerHTML = msg
+
+    </script> 
+</body>
+
+</html>

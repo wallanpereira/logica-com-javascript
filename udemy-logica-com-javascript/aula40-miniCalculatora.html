@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Estudo JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+
+    <style>
+        body {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+
+        .text {
+            text-align: justify;
+        }
+
+        .textNumero {
+            color: darkmagenta;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h3 class="title">Testes com JS</h3>
+
+        <p class="text">
+            Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla laboris cupidatat ut amet irure cillum.
+            Anim
+            cillum aliqua in irure. Minim mollit occaecat anim fugiat reprehenderit veniam ad et labore. Do
+            reprehenderit
+            voluptate nulla elit consectetur do occaecat aute. Minim ut do voluptate amet. Elit ea duis labore aliqua
+            veniam occaecat aliquip fugiat amet dolor cillum et. Nostrud aliquip tempor consequat irure laboris duis eu
+            aliqua ad.
+            Adipisicing minim occaecat exercitation exercitation sint tempor labore minim anim ad cillum cupidatat.
+            Irure
+            ut elit et aliqua eu nisi exercitation. Sint commodo tempor exercitation quis dolor aute culpa non elit
+            commodo
+            sint Lorem est.
+        </p>
+        <p class="output"></p>
+        <div class="box-btn">
+            <button type="button" class="btn btn-success" onclick="inCalc('+')">Soma +</button>
+            <button type="button" class="btn btn-primary" onclick="inCalc('-')">Subtrair -</button>
+            <button type="button" class="btn btn-success" onclick="inCalc('*')">Multiplicar *</button>
+            <button type="button" class="btn btn-primary" onclick="inCalc('/')">Dividir /</button>
+        </div>
+    </div>
+    <script>
+        try {
+            var x = parseFloat(prompt('Digite um valor: '));
+            escrever(x);
+
+        } catch (error) {
+            alert('Digite algo correto!!');
+        }
+
+        function escrever(x) {
+            var output = document.querySelector('.output');
+            output.innerHTML = x;
+        }
+
+        function inCalc(simbol) {
+            var takeX = parseFloat(document.querySelector('.output').textContent);
+
+            var y = parseFloat(prompt('Digite outro valor: '));
+
+            var msg = calcular(simbol, takeX, y);
+
+            escrever(msg);
+            //alert(takeValue);
+        }
+
+        function calcular(simbol, x, y) {
+            var nCalculador = null;
+            switch (simbol) {
+                case '+':
+                    nCalculador = x + y;
+                    break;
+                case '-':
+                    nCalculador = x - y;
+                    break;
+                case '*':
+                    nCalculador = x * y;;
+                    break;
+                case '/':
+                    nCalculador = x / y;
+                    break;
+                default:
+                    alert('Comando errado!');
+            }
+            return nCalculador;
+        }
+    </script>
+</body>
+
+</html>
