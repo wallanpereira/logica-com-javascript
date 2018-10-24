@@ -1,12 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Par ou Ímpar</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+        }
+    </style>
 </head>
+
 <body>
-    
+    <h3 class="title">Game com Javascript</h3>
+    <p class="text">Sortear números</p>
+    <p class="numero">Digite um número de 0 a 5</p>
+
+    <div class="form ">
+        <input type="number" class="myNumber" min="0" max="5">
+        <button onclick="play()">Play</button>
+    </div>
+
+    <script>
+        var qtdN = 5; // Quantidade máxima que a máquina vai sortear
+        var nPlayers = ''; // Valor digitado no campo input 
+        var nPC = ''; // Número sorteado pela máquina
+
+        var mySelect = 'par';
+
+        function sortear(qtdN) {
+            return Math.floor(Math.random() * qtdN); // Sortear um número qualquer
+        }
+
+        function play() {
+            nPC = sortear(qtdN) // Recebe p número sorteado pela máquina
+            nPlayers = parseInt(document.querySelector('.myNumber').value); // Pega o valor do input e add na variavel nPlayers
+
+            console.log('nPC ', nPC); // Exibir número sorteado pela máquina 
+            console.log('nPlayers ', nPlayers, typeof nPlayers); // Exibir número escolhido pelo jogador e exibir o tipo da variavel nPlayers
+        }
+    </script>
 </body>
+
 </html>
