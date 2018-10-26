@@ -22,33 +22,51 @@
 
     <div class="form ">
         <input type="number" class="myNumber" min="0" max="5">
+        <br>
+        <br>
+        <label for=""><input type="radio" name="opcao" value="par" checked />Par</label>
+        <br>
+        <label for=""><input type="radio" name="opcao" value="impar" />Ímpar</label>
+        <br>
+        <br>
         <button onclick="play()">Play</button>
     </div>
 
+
     <script>
+        /*  POR ALGUM MOTIVO QUE NÃO ENCONTREI AINDA, AS VEZES A MAQUINA GANHA MESMO VOCÊ ESTADANDO COM VALOR MAIOR */
+
         var qtdN = 5; // Quantidade máxima que a máquina vai sortear
         var nPlayers = ''; // Valor digitado no campo input 
         var nPC = ''; // Número sorteado pela máquina
-        var mySelect = 'par';
+        var mySelect = ''; // Variavel para pega minha escolha ente par e impar
 
-        function sortear(max) {
-            return Math.floor(Math.random() * max); // Sortear um número qualquer
+        function sortear(qtdN) {
+            return Math.floor(Math.random() * qtdN); // Sortear um número qualquer
         }
 
         function play() {
+            mySelect = document.querySelector('input[type="radio"]:checked').value; // pegue o valor do meu input e adicione a minha variavel
+            console.log('Minha escolhar foi: ', mySelect); // exibir o valor do meu input no console
+
             nPlayers = parseInt(document.querySelector('.myNumber').value); // Pega o valor do input e add na variavel nPlayers
             nPC = parseInt(sortear(qtdN)); // Recebe p número sorteado pela máquina
+            try {
+                if (nPlayers) {
+                    var total = nPlayers + nPC;
 
-            var total = nPlayers + nPC;
+                    // Operador Condicional Ternário (atalho para a instrução if).
+                    var resultado = (total % 2 === 0) ? 'par' : 'impar';
 
-            // Operador Condicional Ternário (atalho para a instrução if).
-            var resultado = (total % 2 === 0) ? 'par' : 'impar';
+                    // Chamada da função verificar resultado
+                    verificarResultado(resultado);
+                } else {
+                    alert("Digite algo!!!");
+                }
+            } catch (e) {
+                console.log(e);
+            }
 
-            // Chamada da função verificar resultado
-            verificarResultado(resultado);
-
-            console.log('nPlayers ', nPlayers, typeof nPlayers); // Exibir número escolhido pelo jogador e exibir o tipo da variavel nPlayers
-            console.log('nPC ', nPC, typeof nPC); // Exibir número sorteado pela máquina
         }
 
         // função para verificar resultado
@@ -58,6 +76,8 @@
             } else {
                 console.log("CPU Wins");
             }
+            console.log('nPlayers ', nPlayers, typeof nPlayers); // Exibir número escolhido pelo jogador e exibir o tipo da variavel nPlayers
+            console.log('nPC ', nPC, typeof nPC); // Exibir número sorteado pela máquina
         }
     </script>
 </body>
