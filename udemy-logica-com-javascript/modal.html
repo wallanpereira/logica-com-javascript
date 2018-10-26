@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style type="text/css">
+        .bs-modal--01 {
+            position: fixed;
+            top: 1%;
+            left: 30%;
+            color: #fff;
+            padding: 10px;
+            background-color: black;
+            opacity: 0;
+        }
+        .bs-modal--01:target{
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .close-modal {
+            text-decoration: none;
+        }
+        img{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <a href="#bs-open-modal">Saiba Mais</a>
+
+
+    <div id="bs-open-modal" class="bs-modal--01">
+        <a href="#close-modal" class="close-modal">Fechar</a>
+        <img src="img/Vestir Rosa.jpg" alt="vestir_rosa.png">
+    </div>
+</body>
+
+</html>
