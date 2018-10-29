@@ -11,8 +11,8 @@
 
     <style>
         body {
-            background-color: black;
-            color: aliceblue;
+            background-color: rgb(255, 255, 255);
+            color: rgb(3, 52, 95);
             font-family: sans-serif;
             font-weight: 500;
         }
@@ -31,6 +31,11 @@
 
         .textNumero {
             color: darkmagenta;
+        }
+        hr {
+            width: 100%;
+            height: 1px;
+            background-color: blue;
         }
     </style>
 
@@ -77,41 +82,57 @@
             [2, 8, 4, 9]
         ];
         var msg = "";
-        document.querySelector('.saida').innerHTML = msg;
 
-        for (let i = 0; i <= 5; i++) {
-            let j = i * 2;
-            console.log(j);
+        // for (let i = 0; i <= 5; i++) {
+        //     let j = i * 2;
+        //     console.log(j);
+        // }
+
+        for (let i = 0; i < notas.length; i++) {
+            console.log(notas[i]); // Irá percorrer todo array           
+
+            msg += '<p> Notas do ' + (i + 1) + 'º Bimestre ' + notas[i].join(', ') + '</p>'; // Mostra a nota de todos bimestre 
+
+            var totalBimestre = 0;
+            for (var j = 0; j < notas[i].length; j++) {
+                console.log([i][j]);
+                totalBimestre += notas[i][j];
+            }
+            var mediaBimestre = totalBimestre / notas[i].length
+            msg += '<p> A média do ' + (i + 1) + 'º Bimestre é: ' + mediaBimestre + '</p><hr>'
+            console.log('mediaBimestre', mediaBimestre)
         }
+
+        document.querySelector('.saida').innerHTML = msg;
 
         //
 
-        var um = new Object();
-        um.nome = 'Wallan Pereira';
-        um.email = 'wallan.santos@mjv.com.br';
+        // var um = new Object();
+        // um.nome = 'Wallan Pereira';
+        // um.email = 'wallan.santos@mjv.com.br';
 
-        var dois = new Object();
-        dois.nome = 'Han Solo';
-        dois.email = 'han.solo@starwars.com';
+        // var dois = new Object();
+        // dois.nome = 'Han Solo';
+        // dois.email = 'han.solo@starwars.com';
 
-        var tres = new Object();
-        tres.nome = 'Roy Skywalker';
-        tres.email = 'roy.skywalker@starwars.com';
+        // var tres = new Object();
+        // tres.nome = 'Roy Skywalker';
+        // tres.email = 'roy.skywalker@starwars.com';
 
-        var people = new Array(um, dois, tres);
+        // var people = new Array(um, dois, tres);
 
-        console.log(people);
+        // console.log(people);
 
-        var msg = '';
-        var x = 0;
-        while (people[x]) {
-            console.log(people[x].nome);
-            console.log(people[x].email);
-            msg += people[x].nome + ' <br/> ' + people[x].email + '<br/>';
-            x++;
-        }
+        // var msg = '';
+        // var x = 0;
+        // while (people[x]) {
+        //     console.log(people[x].nome);
+        //     console.log(people[x].email);
+        //     msg += people[x].nome + ' <br/> ' + people[x].email + '<br/>';
+        //     x++;
+        // }
 
-        document.querySelector('.output').innerHTML = msg
+        // document.querySelector('.output').innerHTML = msg
     </script>
 </body>
 
