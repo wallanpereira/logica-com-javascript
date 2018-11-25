@@ -38,7 +38,7 @@
             </p>
             <hr>
             <div class="saida"></div>
-            <div class="output"></div>
+            <div id="output"></div>
         </div>
     </div>
 
@@ -55,7 +55,18 @@
         ];
         var msg = "";
 
-        document.querySelector(".output").innerHTML = msg;
+        for (var i = 0; i < alunos.length; i++) {
+            msg = '<p><strong>Nome:</strong> ' + alunos[i].nome + '</p>';
+            var notas = alunos[i].notas;
+            msg = '<p><strong>Notas:</strong> ' + notas.join(' | ') + '</p>';
+            var totasNotas = 0;
+            for (var j = 0; j < notas.length; j++) {
+                totasNotas += notas[j];
+            }
+            var media = totasNotas / notas.length;
+            msg = '<p><strong>Média é:</strong> ' + media + '</p>';
+        }
+        document.querySelector("#output").innerHTML = msg;
     </script>
 </body>
 
