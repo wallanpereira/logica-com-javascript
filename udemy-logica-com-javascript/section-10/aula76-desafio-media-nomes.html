@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Estudo JS</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous" />
+
+    <style>
+        body {
+            background-color: rgb(255, 255, 255);
+            color: rgb(3, 52, 95);
+            font-family: sans-serif;
+            font-weight: 500;
+        }
+
+        .content {
+            padding-top: 20px;
+        }
+
+        .title {
+            color: darkmagenta;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h3 class="title">Aula 76 - Desafio</h3>
+            <p class="text">
+                Dado um array de objetos contendo o nome do aluno e as notas no decorrer do ano letivo,
+                mostrar na tela o nome de todos os alunos, as respectivas notas e a média anual de cada
+                um dos alunos, além da média de todos os alunos.
+            </p>
+            <hr>
+            <div class="saida"></div>
+            <div class="output"></div>
+        </div>
+    </div>
+
+    <script>
+        //matriz
+        var alunos = [{
+                nome: 'Wallan',
+                notas: [7, 5, 8, 9]
+            },
+            {
+                nome: 'Pereira',
+                notas: [7, 5, 4, 10]
+            }
+        ];
+        var msg = "";
+
+        document.querySelector(".output").innerHTML = msg;
+    </script>
+</body>
+
+</html>

@@ -1,104 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Estudo JS</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-      crossorigin="anonymous"
-    />
 
-    <style>
-      body {
-        background-color: rgb(255, 255, 255);
-        color: rgb(3, 52, 95);
-        font-family: sans-serif;
-        font-weight: 500;
-      }
-      .content {
-        padding-top: 20px;
-      }
-      .title {
-        color: darkmagenta;
-      }
-    </style>
-  </head>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+	<title>Estudo JS</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	 crossorigin="anonymous" />
 
-  <body>
-    <div class="container">
-      <div class="content">
-        <h3 class="title">Matrizes vs Vetores com JS</h3>
-        <p class="text">
-          Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla
-        </p>
-        <div class="saida"></div>
-        <div class="output"></div>
-      </div>
-    </div>
+	<style>
+		body {
+			background-color: rgb(255, 255, 255);
+			color: rgb(3, 52, 95);
+			font-family: sans-serif;
+			font-weight: 500;
+		}
 
-    <script>
-      var notas = [[5, 6, 4, 3], [2, 8, 5, 6], [3, 6, 4, 8], [2, 8, 4, 9]];
-      var msg = "";
-      var mediaAnual = 0;
+		.content {
+			padding-top: 20px;
+		}
 
-      for (var i = 0; i < notas.length; i++) {
-        console.log(notas[i]);
+		.title {
+			color: darkmagenta;
+		}
+	</style>
+</head>
 
-        msg +=
-          "<p> Notas do " +
-          (i + 1) +
-          "º Bimestre " +
-          notas[i].join(", ") +
-          "</p>";
+<body>
+	<div class="container">
+		<div class="content">
+			<h3 class="title">Matrizes vs Vetores com JS</h3>
+			<p class="text">
+				Eiusmod excepteur sunt eu consequat reprehenderit consequat nulla
+			</p>
+			<div class="saida"></div>
+			<div class="output"></div>
+		</div>
+	</div>
 
-        var totalBimestre = 0;
-        for (var j = 0; j < notas[i].length; j++) {
-          console.log(notas[i][j]);
-          totalBimestre += notas[i][j];
-        }
-        var media = totalBimestre / notas[i].length;
-        mediaAnual += media;
-        msg +=
-          "<p> A média do " + (i + 1) + "º Bimestre é " + media + "</p><hr/>";
-        console.log("Media Bimestral:", media);
-      }
-      mediaAnual = mediaAnual / notas.length;
+	<script>
+		var notas = [
+			[5, 6, 4, 3],
+			[2, 8, 5, 6],
+			[3, 6, 4, 8],
+			[2, 8, 4, 9]
+		];
+		var msg = "";
+		var mediaAnual = 0;
 
-      console.log("Média anual é: ", mediaAnual);
+		for (var i = 0; i < notas.length; i++) {
+			console.log(notas[i]);
 
-      msg += "<p>Á média anual é: " + mediaAnual + "</p>";
-      document.querySelector(".output").innerHTML = msg;
+			msg += "<p> Notas do " + (i + 1) + "º Bimestre " + notas[i].join(", ");
+			("</p>");
 
-      //   for (let i = 0; i < notas.length; i++) {
-      //     console.log(notas[i]); // Irá percorrer todo array
+			var totalBimestre = 0;
+			for (var j = 0; j < notas[i].length; j++) {
+				console.log(notas[i][j]);
+				totalBimestre += notas[i][j];
+			}
+			var media = totalBimestre / notas[i].length;
+			mediaAnual += media;
+			msg +=
+				"<p> A média do " + (i + 1) + "º Bimestre é " + media + "</p><hr/>";
+			console.log("Media Bimestral:", media);
+		}
+		mediaAnual = mediaAnual / notas.length;
 
-      //     msg +=
-      //       "<p> Notas do " +
-      //       (i + 1) +
-      //       "º Bimestre " +
-      //       notas[i].join(", ") +
-      //       "</p>"; // Mostra a nota de todos bimestre
+		console.log("Média anual é: ", mediaAnual);
 
-      //     var totalBimestre = 0;
-      //     for (var j = 0; j < notas[i].length; j++) {
-      //       console.log([i][j]);
-      //       totalBimestre += notas[i][j];
-      //     }
-      //     var mediaBimestre = totalBimestre / notas[i].length;
-      //     msg +=
-      //       "<p> A média do " +
-      //       (i + 1) +
-      //       "º Bimestre é: " +
-      //       mediaBimestre +
-      //       "</p><hr>";
-      //     console.log("mediaBimestre", mediaBimestre);
-      //   }
+		msg += "<p>Á média anual é: " + mediaAnual + "</p>";
+		document.querySelector(".output").innerHTML = msg;
+	</script>
+</body>
 
-      //   document.querySelector(".saida").innerHTML = msg;
-    </script>
-  </body>
 </html>
