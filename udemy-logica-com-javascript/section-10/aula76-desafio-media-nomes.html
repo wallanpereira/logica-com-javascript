@@ -54,18 +54,27 @@
             }
         ];
         var msg = "";
+        var somaMedia = 0;
+        var mediaGeral = 0;
 
         for (var i = 0; i < alunos.length; i++) {
-            msg = '<p><strong>Nome:</strong> ' + alunos[i].nome + '</p>';
+            msg += '<p><strong>Nome:</strong> ' + alunos[i].nome + '</p>';
             var notas = alunos[i].notas;
-            msg = '<p><strong>Notas:</strong> ' + notas.join(' | ') + '</p>';
+            msg += '<p><strong>Notas:</strong> ' + notas.join(' | ') + '</p>';
             var totasNotas = 0;
+
             for (var j = 0; j < notas.length; j++) {
                 totasNotas += notas[j];
             }
+
             var media = totasNotas / notas.length;
-            msg = '<p><strong>Média é:</strong> ' + media + '</p>';
+            somaMedia += media;
+            mediaGeral = somaMedia / alunos.length;
+            msg += '<p><strong>Média é:</strong> ' + media + '</p><hr>';
         }
+
+        msg += '<p><strong>Média de todos os alunos é:</strong> ' + mediaGeral + '</p>';
+
         document.querySelector("#output").innerHTML = msg;
     </script>
 </body>
