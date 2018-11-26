@@ -102,6 +102,7 @@
                 })
             }
         ]
+        var msg = "";
 
         function Endereco(dados) {
             this.logradouro = dados.logradouro || '';
@@ -111,14 +112,22 @@
             this.estado = dados.estado;
             this.cep = dados.cep;
         }
-        var enderecos = [];
+        var enderecos = []; // Array para pega os dados e mostrar na tela
 
         for (var i = 0; i < alunos.length; i++) {
             enderecos[i] = alunos[i].endereco;
         }
+
+        for (var i = 0; i < enderecos.length; i++){
+            var endereco = enderecos[i];
+
+            for(prop in endereco){
+                console.log(prop+ ": " + endereco[prop]);
+                msg += '<p>i: ' + i + ', ' + prop + ': ' + endereco[prop] + '</p>'
+            }
+        }
         console.log(enderecos);
 
-        var msg = "";
 
         document.querySelector(".output").innerHTML = msg;
     </script>
