@@ -1,136 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Estudo JS</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-        crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous"
+    />
 
     <style>
-        body {
-            background-color: rgb(255, 255, 255);
-            color: rgb(3, 52, 95);
-            font-family: sans-serif;
-            font-weight: 500;
-        }
+      body {
+        background-color: rgb(255, 255, 255);
+        color: rgb(3, 52, 95);
+        font-family: sans-serif;
+        font-weight: 500;
+      }
+      hr {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        border: 0;
+        border-top: 2px solid #0062cc;
+      }
 
-        .content {
-            padding-top: 20px;
-        }
+      .content {
+        padding-top: 20px;
+      }
 
-        .title {
-            color: darkmagenta;
-        }
+      .title {
+        color: darkmagenta;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <div class="content">
-            <h3 class="title">Aula 80 - Desafio iterar com for ... in </h3>
-            <p class="text">
-                Mostrar no output todas as propriedades dos objetos da array "enderecos" usando
-                for ... in, desde que diferente de undefined.
-            </p>
-            <hr>
-            <div class="saida"></div>
-            <div class="output"></div>
-        </div>
+      <div class="content">
+        <h3 class="title">Aula 80 - Desafio iterar com for ... in</h3>
+        <p class="text">
+          Mostrar no output todas as propriedades dos objetos da array
+          "enderecos" usando for ... in, desde que diferente de undefined.
+        </p>
+        <hr />
+        <div class="saida"></div>
+        <div class="output"></div>
+      </div>
     </div>
 
     <script>
-        // var alunos = [
-        //     {nome: 'daniel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
-        //     {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
-        //     {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
-        //     {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
-        //     {nome: 'ana', id: 114555, endereco: 'Av belezura 41, SP'},
-        // ]
-        var alunos = [{
-                nome: 'daniel',
-                id: 112233,
-                endereco: new Endereco({
-                    logradouro: 'rua faz de conta 2',
-                    n: 2,
-                    complemento: 'ap 3',
-                    cidade: 'São Paulo',
-                    estado: 'SP',
-                    cep: '123456-789'
-                })
-            },
-            {
-                nome: 'josé',
-                id: 112244,
-                endereco: new Endereco({
-                    logradouro: 'rua belezura',
-                    n: 5,
-                    cidade: 'São Paulo',
-                    cep: '22222-222'
-                })
-            },
-            {
-                nome: 'joão',
-                id: 113344,
-                endereco: new Endereco({
-                    logradouro: 'rua belezura',
-                    n: 20,
-                    cidade: 'São Paulo',
-                    cep: '22222-222'
-                })
-            },
-            {
-                nome: 'maria',
-                id: 114444,
-                endereco: new Endereco({
-                    logradouro: 'rua chuchu',
-                    n: 1,
-                    estado: 'RJ',
-                    cep: '22222-222'
-                })
-            },
-            {
-                nome: 'ana',
-                id: 114555,
-                endereco: new Endereco({
-                    logradouro: 'Av belezura',
-                    n: 41,
-                    estado: 'SP',
-                    cep: '33333-33'
-                })
-            }
-        ]
-        var msg = "";
-
-        function Endereco(dados) {
-            this.logradouro = dados.logradouro || '';
-            this.n = dados.n || 0;
-            this.complemento = dados.complemento;
-            this.cidade = dados.cidade;
-            this.estado = dados.estado;
-            this.cep = dados.cep;
+      // var alunos = [
+      //     {nome: 'daniel', id: 112233, endereco: 'rua faz de conta 2, ap 3, são paulo SP'},
+      //     {nome: 'josé', id: 112244, endereco: 'rua belezura 5, Sao paulo'},
+      //     {nome: 'joão', id: 113344, endereco: 'rua belezura 20, Sao Paulo - perto do josé'},
+      //     {nome: 'maria', id: 114444, endereco: 'rua chuchu 1, RJ'},
+      //     {nome: 'ana', id: 114555, endereco: 'Av belezura 41, SP'},
+      // ]
+      var alunos = [
+        {
+          nome: "daniel",
+          id: 112233,
+          endereco: new Endereco({
+            logradouro: "rua faz de conta 2",
+            n: 2,
+            complemento: "ap 3",
+            cidade: "São Paulo",
+            estado: "SP",
+            cep: "123456-789"
+          })
+        },
+        {
+          nome: "josé",
+          id: 112244,
+          endereco: new Endereco({
+            logradouro: "rua belezura",
+            n: 5,
+            cidade: "São Paulo",
+            cep: "22222-222"
+          })
+        },
+        {
+          nome: "joão",
+          id: 113344,
+          endereco: new Endereco({
+            logradouro: "rua belezura",
+            n: 20,
+            cidade: "São Paulo",
+            cep: "22222-222"
+          })
+        },
+        {
+          nome: "maria",
+          id: 114444,
+          endereco: new Endereco({
+            logradouro: "rua chuchu",
+            n: 1,
+            estado: "RJ",
+            cep: "22222-222"
+          })
+        },
+        {
+          nome: "ana",
+          id: 114555,
+          endereco: new Endereco({
+            logradouro: "Av belezura",
+            n: 41,
+            estado: "SP",
+            cep: "33333-33"
+          })
         }
-        var enderecos = []; // Array para pega os dados e mostrar na tela
+      ];
+      var msg = ""; // variavel do tipo string para salvar dados diversos a ser exibido em tela.
+      var enderecos = []; // Array para pega os dados e mostrar na tela.
 
-        for (var i = 0; i < alunos.length; i++) {
-            enderecos[i] = alunos[i].endereco;
+      function Endereco(dados) {
+        this.logradouro = dados.logradouro || "";
+        this.n = dados.n || 0;
+        this.complemento = dados.complemento;
+        this.cidade = dados.cidade;
+        this.estado = dados.estado;
+        this.cep = dados.cep;
+      }
+
+      for (var i = 0; i < alunos.length; i++) {
+        enderecos[i] = alunos[i].endereco;
+      }
+
+      for (var i = 0; i < enderecos.length; i++) {
+        var endereco = enderecos[i];
+
+        for (prop in endereco) {
+          console.log(prop + ": " + endereco[prop]);
+          if (endereco[prop]) {
+            msg += "<p>i: " + i + ", " + prop + ": " + endereco[prop] + "</p>";
+          }
         }
+        msg += "<hr>";
+      }
+      console.log(enderecos);
 
-        for (var i = 0; i < enderecos.length; i++){
-            var endereco = enderecos[i];
-
-            for(prop in endereco){
-                console.log(prop+ ": " + endereco[prop]);
-                msg += '<p>i: ' + i + ', ' + prop + ': ' + endereco[prop] + '</p>'
-            }
-        }
-        console.log(enderecos);
-
-
-        document.querySelector(".output").innerHTML = msg;
+      document.querySelector(".output").innerHTML = msg;
     </script>
-</body>
-
+  </body>
 </html>
