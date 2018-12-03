@@ -122,14 +122,13 @@
 				fabricante: "nestle"
 			},
 		];
-
+			
 		var nChocolate = [];
 
-		for (var i = 0; i < chocolate.length; i++) {
-			if (chocolate[i].fabricante == "garoto") {
-				nChocolate.push(chocolate[i]);
-			}
+		for(var i =0; i < chocolate.length;i++){
+			nChocolate[i] += chocolate[i]; 
 		}
+		
 		console.log(nChocolate);
 	</script>
 </body>
