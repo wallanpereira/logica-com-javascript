@@ -6,6 +6,8 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta http-equiv="X-UA-Compatible" content="ie=edge" />
 	<title>Estudo JS</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
+	 crossorigin="anonymous">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	 crossorigin="anonymous" />
 
@@ -31,17 +33,41 @@
 		.title {
 			color: darkmagenta;
 		}
+
+		.box-icone {
+			position: relative;
+			display: flex;
+			justify-content: normal;
+			align-items: center;
+		}
+
+		.iconPlay {
+			font-size: 80px;
+			position: inherit;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.iconRed {
+			background-color: #e80d0d;
+			width: 90%;
+			height: 90%;
+			border-radius: 100%;
+			z-index: -1;
+			position: absolute;
+		}
 	</style>
 </head>
 
 <body>
 	<div class="container">
 		<div class="content">
-			<h3 class="title">Aula 82 - Referência vs Valor</h3>
+			<h3 class="title">Aula 84 - Referência vs Valor</h3>
 			<p class="text">
-				Lorem ipsum pharetra dictum sodales cras torquent pharetra ut,
-				tristique id conubia nec consequat bibendum conubia. augue vulputate
-				lacinia fringilla nec iaculis eros class tortor.
+
+
+				https://www.udemy.com/logica-de-programacao-com-javascript-iniciando-no-frontend/learn/v4/t/lecture/11564338?start=431
 			</p>
 			<hr />
 			<div class="saida"></div>
@@ -56,6 +82,12 @@
 			<img src="../img/marvel-iron-man.jpeg" alt="HTML Reference logo" width="80px" height="80px">
 			<figcaption>The HTML Reference logo</figcaption>
 		</figure>
+
+		<div class="box-icone">
+			<i class="iconPlay fas fa-play-circle">
+				<span class="iconRed"></span>
+			</i>
+		</div>
 
 	</div>
 
@@ -126,11 +158,11 @@
 		var nChocolate = [];
 
 		for (var i = 0; i < chocolate.length; i++) {
-			if (chocolate[i].fabricante ==) {
-				nChocolate[i] += chocolate[i].fabricante;
+			if (chocolate[i].fabricante) {
+
+				nChocolate[i] = chocolate[i].fabricante;
 			}
 		}
-
 		console.log(nChocolate);
 	</script>
 </body>
