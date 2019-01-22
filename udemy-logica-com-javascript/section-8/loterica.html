@@ -28,48 +28,61 @@
     <div class="output"></div>
 
     <script>
-        var meuNumeros = [13, 32, 23, 64, 85, 56]
-        var indice = 15; // Qtd de numeros para sortear
+        // chosen numbers
+        var myNumbers = [10, 25, 30, 40, 50, 55];
+        // number of draw numbers
+        var index = 15;
+        // call function numbersDrawn()
+        var drawn = numbersDrawn();
 
-
-        var sorteados = obtemNumerosSortidos(); // adiciona function a variavel
         var output = document.querySelector('.output');
         var msg = '';
 
-        msg += '<p>Numeros Sorteados: </p>'
-        msg += '<p> ' + sorteados.join(' | ') + ' </p>';
+        msg += '<p> Numbers Drawn: </p>';
 
+        msg += '<p>' + drawn.join(' | ') + '</p>';
 
-        for (var i = 0; i < meuNumeros.length; i++) {
-            msg += '<p>' + meuNumeros[i] + ' : ';
-
-            msg += (sorteados.indexOf(meuNumeros[i]) === -1) ? 'Errou' : 'Acertou'
-
-            msg += '</p>';
-
-        }
-
-        // Exibir no html
+        // view numbers
         output.innerHTML = msg;
 
-        function obtemNumerosSortidos() {
-            var sorteados = [];
 
+        function numbersDrawn() {
+            var numbersDrawn = [];
 
-            function sortear() {
-                return Math.floor(Math.random() * 60)
+            function numbersRadom() {
+                // pegue o menor valor (arendondado entre) 
+                return Math.floor(Math.random() * 60);
             }
 
-            while (sorteados.length < indice) {
-                var sorteado = sortear();
-                if (sorteados.indexOf(sorteado) === -1) {
-                    sorteados[sorteados.length] = sorteado;
+            while (numbersDrawn.length < index) {
+                var drawn = numbersRadom();
+                if (numbersDrawn.indexOf(drawn) === -1) {
+                    numbersDrawn[numbersDrawn.length] = drawn;
                 }
-                console.log(sorteados.length, sorteado)
             }
-            return sorteados;
+            return numbersDrawn;
         }
-        console.log(sorteados)
+
+        /*
+
+var meuNumeros = [13, 32, 23, 64, 85, 56]
+var indice = 15; // Qtd de numeros para sortear
+
+var sorteados = obtemNumerosSortidos(); // adiciona function a variavel
+var output = document.querySelector('.output');
+var msg = '';
+
+msg += '<p>Numeros Sorteados: </p>'
+msg += '<p> ' + sorteados.join(' | ') + ' </p>';
+
+for (var i = 0; i < meuNumeros.length; i++) { msg +='<p>' + meuNumeros[i] + ' : ' ; msg +=(sorteados.indexOf(meuNumeros[i])===-1)
+    ? 'Errou' : 'Acertou' msg +='</p>' ; } // Exibir no html output.innerHTML=msg; function obtemNumerosSortidos() {
+    var sorteados=[]; function sortear() { // A função Math.floor(x) retorna o menor número inteiro dentre o número "x"
+    . return Math.floor(Math.random() * 60) } while (sorteados.length < indice) { var sorteado=sortear(); if
+    (sorteados.indexOf(sorteado)===-1) { sorteados[sorteados.length]=sorteado; } console.log(sorteados.length,
+    sorteado) } return sorteados; } console.log(sorteados)
+
+        */
     </script>
 </body>
 
